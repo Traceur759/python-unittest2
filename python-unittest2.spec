@@ -1,7 +1,7 @@
 # Created by pyp2rpm-1.1.1
 %global pypi_name unittest2
 %global with_python3 1
-%global bootstrap_traceback2 0
+%global bootstrap_traceback2 1
 
 Name:           python-%{pypi_name}
 Version:        1.1.0
@@ -30,6 +30,7 @@ framework in Python 2.7 and onwards. It is tested to run on Python 2.6, 2.7,
 
 %package -n     python2-%{pypi_name}
 Summary:        The new features in unittest backported to Python 2.4+
+BuildRequires:  python2-traceback2
 %{?python_provide:%python_provide python2-%{pypi_name}}
 BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
@@ -145,6 +146,9 @@ popd
 
 
 %changelog
+* Tue Jun 05 2018 Marcel Plch <mplch@redhat.com> - 0.5.5-6
+- Add BuildRequires for python-traceback2
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-12
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
